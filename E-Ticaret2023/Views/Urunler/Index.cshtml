@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create",null, new {@class="btn btn-success"})
 </p>
 <table class="table">
     <tr>
@@ -36,7 +36,7 @@
             @Html.DisplayFor(modelItem => item.UrunAdi)
         </td>
         <td>
-            <img src="~/Resim/@(item.UrunID).jpg" width="50"/>
+            <img src="/Resim/@(item.UrunID+".jpg")" width="50" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.UrunAciklamasi)
@@ -48,9 +48,9 @@
             @Html.DisplayFor(modelItem => item.Kategoriler.KategoriAdi)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UrunID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UrunID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UrunID })
+            @Html.ActionLink("Düzenle", "Edit", new { id = item.UrunID }, new { @class = "btn btn-success btn-sm" })
+            @Html.ActionLink("Detay", "Details", new { id = item.UrunID }, new { @class = "btn btn-warning btn-sm" })
+            @Html.ActionLink("Sil", "Delete", new { id = item.UrunID }, new { @class = "btn btn-danger btn-sm" }) 
         </td>
     </tr>
 }
